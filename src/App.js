@@ -52,7 +52,7 @@ function App() {
                     {/*<img src={Comet} alt='comet' id='comet'/>*/}
                     <img src={Moon} alt='moon' id='moon'/>
                     <img src={MountainsBehind} alt='mountains behind' id='mountainsBehind'/>
-                    <img src={Comet} id='comet' />
+                    <img src={Comet} id='comet' alt={'comet'} />
                     <h4 id='button' className='button-style'>Experience</h4>
                     <img src={MountainsFront} alt='mountains front' id='mountainsFront'/>
                 </section>
