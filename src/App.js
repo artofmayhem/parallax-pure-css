@@ -7,6 +7,7 @@ import Moon from './assets/moon.png'
 import MountainsBehind from './assets/mountains_behind.png'
 import MountainsFront from './assets/mountains_front.png'
 import Comet from './assets/comet.png'
+import Light from './assets/light.jpg'
 import {Suspense} from 'react'
 
 function App() {
@@ -26,9 +27,9 @@ function App() {
         moon.style.top = value * 1.05 + 'px';
         mountainsBehind.style.top = value * 0.5 + 'px';
         mountainsFront.style.top = value + 'px';
-        comet.style.marginLeft = value * 2 + 'px';
+         comet.style.marginLeft = value * 3 + 'px';
         button.style.top = value * 1.5 + 'px';
-        header.style.top = value * 0.01 + 'px';
+        header.style.top = value * 0.04 + 'px';
     });
 
     return (
@@ -49,7 +50,6 @@ function App() {
             <Suspense fallback={<div>Loading...</div>}>
                 <section className='d-flex justify-content-center align-content-center'>
                     <img src={Stars} alt='stars' id='stars'/>
-                    {/*<img src={Comet} alt='comet' id='comet'/>*/}
                     <img src={Moon} alt='moon' id='moon'/>
                     <img src={MountainsBehind} alt='mountains behind' id='mountainsBehind'/>
                     <img src={Comet} id='comet' alt={'comet'} />
@@ -79,8 +79,8 @@ function App() {
             </div>
             <div id={'color'}/>
             <div className='content-wrapper d-flex justify-content-center flex-column' id='sec'>
-                <div className='d-flex flex-column justify-content-center content'>
-                    <h2>Why do we Create?</h2>
+                <div className='d-flex flex-column justify-content-center content' style={{backgroundColor: 'black', border: 'none'}}>
+                    <h2 style={{padding: '30vh 35vw'}}>Why do we Create?</h2>
                 </div>
             </div>
             <div id={'splash'}/>
@@ -100,7 +100,15 @@ function App() {
                 </div>
             </div>
             <div id={'light'}/>
-            <div id={'dark'}/>
+            <div id={'dark'}>
+                <div className='d-flex flex-row flex-wrap justify-content-between align-content-center'>
+                    <h1 style={{fontSize: '20vh', marginTop: '40vh', marginLeft: '10vw', textShadow: '0 0 1vh #fff'}}>Create</h1>
+                    <img src={Light} alt={'light'} style={{maxWidth: '100vw', marginTop: '10vh', boxShadow: '0 0 5vh orange'}}/>
+                    <h5 style={{fontSize: '10vh', marginLeft: '60vw' }}>Digital Media</h5>
+                    <h6 style={{fontSize: '5vh', marginLeft: '60vw', marginBottom: '5vh'}}>Honolulu 96822</h6>
+                </div>
+            </div>
+
         </div>
     );
 }
