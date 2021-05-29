@@ -7,9 +7,42 @@ import MountainsBehind from './assets/mountains_behind.png'
 import MountainsFront from './assets/mountains_front.png'
 import Comet from './assets/comet.png'
 import Light from './assets/light.jpg'
+import { makeStyles } from '@material-ui/core/styles';
+import Modal from '@material-ui/core/Modal';
+import SimpleModal from '@material-ui/core/Modal'
+import React from 'react'
 
+function rand() {
+  return Math.round(Math.random() * 20) - 10;
+}
+
+function getModalStyle() {
+  const top = 50 + rand();
+  const left = 50 + rand(); 
+  
+  return {
+    top: `${top}%`,
+    left: `${left}%`,
+    transform: `translate(-${top}%, -${left}%)`,
+    
+  };
+}
+
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    position: 'absolute',
+    width: 400,
+    backgroundColor: theme.palette.background.paper,
+    border: '2px solid #000',
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+    margin: '0 auto'
+  },
+}));
 function App() {
     const animation = () => {
+       // alert("Welcome to Digirest sleep tracker")
+        handleOpen()
         const stars = document.getElementById('stars');
         //console.log(stars)
         const moon = document.getElementById('moon');
@@ -29,6 +62,29 @@ function App() {
             header.style.top = value * 0.04 + 'px';
         })
     }
+
+    const classes = useStyles();
+    // getModalStyle is not a pure function, we roll the style only on the first render
+    const [modalStyle] = React.useState(getModalStyle);
+    const [open, setOpen] = React.useState(false);
+  
+    const handleOpen = () => {
+      setOpen(true);
+    };
+  
+    const handleClose = () => {
+      setOpen(false);
+    };
+  
+    const body = (
+      <div style={{margin: '40vh 37vw', textAlign: 'center', opacity: '0.7', boxShadow: '0 0 2vh white', borderRadius: '50px', padding: '3vh 3vw'}} className={classes.paper}>
+        <h2 id="simple-modal-title">Welcome to Digirest</h2>
+        <p id="simple-modal-description">
+         Continue to scroll and learn how to take control of your sleep habits.
+        </p>
+        <SimpleModal />
+      </div>
+    );
     //animation()
     return (
         <div>
@@ -51,6 +107,14 @@ function App() {
                     <img src={MountainsBehind} alt='mountains behind' id='mountainsBehind'/>
                     <img src={Comet} id='comet' alt={'comet'} />
                     <button id='button' onClick={animation} className='button-style'>Experience</button>
+                    <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+      >
+        {body}
+      </Modal>
                     <img src={MountainsFront} alt='mountains front' id='mountainsFront'/>
                 </section>
 

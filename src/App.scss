@@ -9,7 +9,7 @@
 }
 
 body {
-    overflow-x: auto;
+    overflow-x: hidden;
     overflow-y: auto;
     min-height: 100vh;
     max-height: 300vh;
@@ -22,7 +22,7 @@ body {
 header {
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     box-shadow: 0 0 5vh black;
     z-index: 10000
 }
@@ -61,7 +61,7 @@ section::before{
     content: '';
     position: absolute;
     bottom: 0;
-    width: 100%;
+    width: 100vw;
     height: 100px;
     background: linear-gradient(
                     to top,
@@ -69,7 +69,7 @@ section::before{
                     transparent
     );
     z-index: 1000;
-    top: 450%
+    top: 450%;
 
 }
 
