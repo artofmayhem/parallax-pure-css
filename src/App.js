@@ -77,12 +77,12 @@ function App() {
     };
   
     const body = (
-      <div style={{margin: '40vh 37vw', textAlign: 'center', opacity: '0.7', boxShadow: '0 0 2vh white', borderRadius: '50px', padding: '3vh 3vw'}} className={classes.paper}>
+      <div style={{ textAlign: 'center', opacity: '0.7', boxShadow: '0 0 2vh white', borderRadius: '50px', padding: '3vh 1vw', justifyItems: 'center', alignItems: 'center'}} className={classes.paper}>
         <h2 id="simple-modal-title">Welcome to Digirest</h2>
         <p id="simple-modal-description">
          Continue to scroll and learn how to take control of your sleep habits.
         </p>
-        <SimpleModal />
+        <SimpleModal/>
       </div>
     );
     //animation()
@@ -112,6 +112,7 @@ function App() {
         onClose={handleClose}
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
+        style={{ margin: '30vh 36vw'}}
       >
         {body}
       </Modal>
