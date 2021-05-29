@@ -56,9 +56,9 @@ function App() {
 
             <div className='content-wrapper d-flex justify-content-center flex-column' id='sec'>
                 <div className='d-flex flex-column justify-content-center content'>
-                    <h2>What is Create?</h2>
-                    <p>Create isn't just a digital media company. Create allows you creatively entice your target market
-                        with cutting edge technology, stunning media, and new ways to bring your story home.</p>
+                    <h2>Improve your sleeping habits with Digirest</h2>
+                    <p>Digirest isn't just a digital sleep tracker. Digirest allows you track your sleep habits
+                        with cutting edge technology, stunning media, and new ways to ensure you have the best sleep of your life.</p>
                     <br/>
                     <p>Create isn't just an idea. It's a way of life.</p>
                     <h2 style={{padding: '7vh 0'}}>How do we create....?</h2>
