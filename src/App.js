@@ -45,7 +45,7 @@ function App() {
                     <Button className='btn btn-light' color='inherit' size='large'>Connect</Button>
                 </div>
             </header>
-                <section className='d-flex justify-content-center align-content-center'>
+                <section className='d-flex justify-content-center align-content-center' style={{maxWidth: '100vw'}}>
                     <img src={Stars} alt='stars' id='stars'/>
                     <img src={Moon} alt='moon' id='moon'/>
                     <img src={MountainsBehind} alt='mountains behind' id='mountainsBehind'/>
