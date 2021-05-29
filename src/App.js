@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import './App.css';
 import "bootstrap/dist/css/bootstrap.css";
 import {Button} from '@material-ui/core'
@@ -8,37 +7,36 @@ import MountainsBehind from './assets/mountains_behind.png'
 import MountainsFront from './assets/mountains_front.png'
 import Comet from './assets/comet.png'
 import Light from './assets/light.jpg'
-import {Suspense} from 'react'
 
 function App() {
-
-    //parallax event handlers
-    let stars = document.getElementById('stars');
-    //console.log(stars)
-    let moon = document.getElementById('moon');
-    let mountainsBehind = document.getElementById('mountainsBehind');
-    let comet = document.getElementById('comet');
-    let button = document.getElementById('button');
-    let mountainsFront = document.getElementById('mountainsFront');
-    let header = document.getElementById('header');
-    window.addEventListener('scroll', () => {
-        let value = window.scrollY;
-        stars.style.left = value * 0.25 + 'px';
-        moon.style.top = value * 1.05 + 'px';
-        mountainsBehind.style.top = value * 0.5 + 'px';
-        mountainsFront.style.top = value + 'px';
-         comet.style.marginLeft = value * 3 + 'px';
-        button.style.top = value * 1.5 + 'px';
-        header.style.top = value * 0.04 + 'px';
-    });
-
+    const animation = () => {
+        const stars = document.getElementById('stars');
+        //console.log(stars)
+        const moon = document.getElementById('moon');
+        const mountainsBehind = document.getElementById('mountainsBehind');
+        const comet = document.getElementById('comet');
+        const button = document.getElementById('button');
+        const mountainsFront = document.getElementById('mountainsFront');
+        const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+            const value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountainsBehind.style.top = value * 0.5 + 'px';
+            mountainsFront.style.top = value + 'px';
+            comet.style.marginLeft = value * 3 + 'px';
+            button.style.top = value * 1.5 + 'px';
+            header.style.top = value * 0.04 + 'px';
+        })
+    }
+    //animation()
     return (
         <div>
             <header className='d-flex flex-row flex-wrap justify-content-between' id='header'
                     style={{backgroundColor: '#222', color: 'white', opacity: '0.6'}}>
                 <div className='d-flex flex-row flex-wrap justify-content-between'>
-                    <h1 style={{fontSize: '10vh'}}>Create</h1>
-                    <h5>Digital Media</h5>
+                    <h1 style={{fontSize: '10vh'}}>Digirest</h1>
+                    <h5>Sleep Tracker</h5>
                 </div>
                 <div className='d-flex flex-row flex-wrap links'>
                     <Button className='btn btn-light' color='inherit' size='large'>Home</Button>
@@ -47,16 +45,15 @@ function App() {
                     <Button className='btn btn-light' color='inherit' size='large'>Connect</Button>
                 </div>
             </header>
-            <Suspense fallback={<div>Loading...</div>}>
                 <section className='d-flex justify-content-center align-content-center'>
                     <img src={Stars} alt='stars' id='stars'/>
                     <img src={Moon} alt='moon' id='moon'/>
                     <img src={MountainsBehind} alt='mountains behind' id='mountainsBehind'/>
                     <img src={Comet} id='comet' alt={'comet'} />
-                    <h4 id='button' className='button-style'>Experience</h4>
+                    <button id='button' onClick={animation} className='button-style'>Experience</button>
                     <img src={MountainsFront} alt='mountains front' id='mountainsFront'/>
                 </section>
-            </Suspense>
+
             <div className='content-wrapper d-flex justify-content-center flex-column' id='sec'>
                 <div className='d-flex flex-column justify-content-center content'>
                     <h2>What is Create?</h2>
@@ -111,6 +108,8 @@ function App() {
 
         </div>
     );
+
 }
+
 
 export default App;
